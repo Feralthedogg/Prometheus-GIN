@@ -66,8 +66,7 @@ func (pg *PrometheusGin) RegisterUntyped(name, help string, labels map[string]st
 	return untyped
 }
 
-func (pg *PrometheusGin) MetricsHandler() {
-	pg.engine.GET("/metrics", MetricsHandler(pg.registry))
+func (pg *PrometheusGin) MetricsHandler(path string) {
 }
 
 func (pg *PrometheusGin) Engine() *gin.Engine {
